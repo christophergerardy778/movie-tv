@@ -6,18 +6,22 @@ import {WebRoutingModule} from "./web-routing.module";
 import {AppLayoutComponent} from './layout/app-layout/app-layout.component';
 import {MaterialModule} from "../material/material.module";
 import {CardFullScreenComponent} from './components/card-full-screen/card-full-screen.component';
+import {CardMovieComponent} from './components/card-movie/card-movie.component';
+import {SwiperModule} from "swiper/angular";
 
 @NgModule({
   declarations: [
     NavigationComponent,
     HomeComponent,
     AppLayoutComponent,
-    CardFullScreenComponent
+    CardFullScreenComponent,
+    CardMovieComponent,
   ],
   imports: [
     CommonModule,
     MaterialModule,
-    WebRoutingModule
+    WebRoutingModule,
+    SwiperModule
   ]
 })
 export class WebModule {

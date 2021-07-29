@@ -4,3 +4,15 @@
   align-items: center;
   justify-content: center;
 }
+
+.app-section-top {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.app-card-fullscreen-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

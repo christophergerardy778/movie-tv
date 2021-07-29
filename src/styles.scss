@@ -38,6 +38,16 @@ body {
   font-weight: bolder !important;
 }
 
+.app-rate-wrapper {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.app-mb-none {
+  margin-bottom: 0 !important;
+}
+
 .app-mb-small {
   margin-bottom: 8px !important;
 }
@@ -51,5 +61,37 @@ body {
 }
 
 .app-font-bold {
-  font-weight: bold;
+  font-weight: bold !important;
+}
+
+.app-font-black {
+  font-weight: bolder !important;
+}
+
+.app-text-size-small {
+  font-size: 12px !important;
+}
+
+.app-text-size-1 {
+  font-size: 14px !important;
+}
+
+.app-text-size-2 {
+  font-size: 18px !important;
+}
+
+.app-text-size-3 {
+  font-size: 24px !important;
+}
+
+.app-text-size-4 {
+  font-size: 36px !important;
+}
+
+.app-text-size-5 {
+  font-size: 48px !important;
+}
+
+.app-btn-block {
+  width: 100%;
 }

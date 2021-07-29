@@ -1,7 +1,7 @@
 <div class="app-section-popular">
   <div class="container">
     <div class="row">
-      <div class="col-md-8">
+      <div class="col-md-9 app-card-fullscreen-center">
         <h1 class="app-text-white-focus app-text-title app-mb-2">
           Now playing
         </h1>
@@ -9,10 +9,19 @@
         <app-card-full-screen></app-card-full-screen>
       </div>
 
-      <div class="col-md-2">
-        <h2 class="app-text-white-focus-secondary">
+      <div class="col-md-3">
+        <h2 class="app-text-white-focus-secondary app-font-black">
           Top playing
         </h2>
+
+        <div class="app-section-top">
+          <app-card-movie></app-card-movie>
+          <app-card-movie></app-card-movie>
+          <app-card-movie></app-card-movie>
+          <button mat-flat-button class="app-accent-background app-btn-block">
+            Show more
+          </button>
+        </div>
       </div>
     </div>
 
