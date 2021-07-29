@@ -1,1 +1,55 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~swiper/swiper-bundle';
+
+$white-color-focus: rgba(255, 255, 255, 0.8);
+$white-color-focus-secondary: rgba(255, 255, 255, 0.6);
+
+$dark-color-primary: #1A1A2E;
+$dark-color-secondary: #16213E;
+
+$accent-color: #FF9900;
+
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: $dark-color-secondary;
+}
+
+.app-text-white-focus {
+  color: $white-color-focus;
+}
+
+.app-text-white-focus-secondary {
+  color: $white-color-focus-secondary;
+}
+
+.app-accent-background {
+  background-color: $accent-color;
+}
+
+.app-accent-text {
+  color: $accent-color;
+}
+
+.app-text-title {
+  font-size: 32px !important;
+  font-weight: bolder !important;
+}
+
+.app-mb-small {
+  margin-bottom: 8px !important;
+}
+
+.app-mb-1 {
+  margin-bottom: 18px !important;
+}
+
+.app-mb-2 {
+  margin-bottom: 24px !important;
+}
+
+.app-font-bold {
+  font-weight: bold;
+}
