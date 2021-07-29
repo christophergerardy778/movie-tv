@@ -1,15 +1,29 @@
-<div class="app-section-popular">
-  <div class="container">
+<div class="app-section-popular app-container-ext">
+  <div class="container app-container">
     <div class="row">
-      <div class="col-md-9 app-card-fullscreen-center">
+      <div class="col-md-9 col-sm-12 col-xs-12 app-card-fullscreen-center">
         <h1 class="app-text-white-focus app-text-title app-mb-2">
           Now playing
         </h1>
 
-        <app-card-full-screen></app-card-full-screen>
+        <swiper
+          class="app-max-width"
+          [slidesPerView]="1"
+          [spaceBetween]="24"
+        >
+          <ng-template swiperSlide>
+            <app-card-full-screen></app-card-full-screen>
+          </ng-template>
+          <ng-template swiperSlide>
+            <app-card-full-screen></app-card-full-screen>
+          </ng-template>
+          <ng-template swiperSlide>
+            <app-card-full-screen></app-card-full-screen>
+          </ng-template>
+        </swiper>
       </div>
 
-      <div class="col-md-3">
+      <div class="col-md-3 col-sm-12 col-xs-12">
         <h2 class="app-text-white-focus-secondary app-font-black">
           Top playing
         </h2>

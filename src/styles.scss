@@ -95,3 +95,13 @@ body {
 .app-btn-block {
   width: 100%;
 }
+
+@media screen and (max-width: 768px){
+  .app-container {
+    max-width: 100%;
+  }
+
+  .app-container-ext {
+    padding: 0 18px;
+  }
+}
