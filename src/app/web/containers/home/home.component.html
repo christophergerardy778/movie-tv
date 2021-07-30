@@ -108,56 +108,33 @@
       </div>
 
       <div class="col-md-12 col-sm-12 col-xs-12">
-        <mat-tab-group>
-          <mat-tab label="Action">
-            <div class="app-tab-wrapper">
-              <div class="row app-max-width">
-                <div
-                  class="col-md-3 col-sm-6 col-xs-12 app-mt-3"
-                  *ngFor="let movie of popular$ | async"
-                >
-                  <app-card-movie [movie]="movie"></app-card-movie>
-                </div>
-
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                  <button
-                    mat-button
-                    class="app-accent-background app-btn-block app-text-white-focus app-mt-3"
+        <mat-tab-group animationDuration="500ms">
+          <mat-tab
+            *ngFor="let tabItem of tabContent.tabs;"
+            [label]="tabItem.tab.name"
+          >
+            <ng-template matTabContent>
+              <div class="app-tab-wrapper">
+                <div class="row app-max-width">
+                  <div
+                    class="col-md-3 col-sm-6 col-xs-12 app-mt-3"
+                    *ngFor="let movie of tabItem.movies"
                   >
-                    Show all
-                  </button>
+                    <app-card-movie [movie]="movie"></app-card-movie>
+                  </div>
+
+                  <div class="col-md-12 col-sm-12 col-xs-12">
+                    <button
+                      mat-button
+                      class="app-accent-background app-btn-block app-text-white-focus app-mt-3"
+                    >
+                      Show all
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
+            </ng-template>
           </mat-tab>
-
-          <mat-tab label="Action">
-            <div class="app-tab-wrapper">
-              <div class="row app-max-width">
-                <div
-                  class="col-md-3 col-sm-6 col-xs-12 app-mt-3"
-                  *ngFor="let movie of tvPopular$ | async"
-                >
-                  <app-card-movie [movie]="movie"></app-card-movie>
-                </div>
-
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                  <button
-                    mat-button
-                    class="app-accent-background app-btn-block app-text-white-focus app-mt-3"
-                  >
-                    Show all
-                  </button>
-                </div>
-              </div>
-            </div>
-          </mat-tab>
-          <mat-tab label="Action"></mat-tab>
-          <mat-tab label="Action"></mat-tab>
-          <mat-tab label="Action"></mat-tab>
-          <mat-tab label="Action"></mat-tab>
-          <mat-tab label="Action"></mat-tab>
-          <mat-tab label="Action"></mat-tab>
         </mat-tab-group>
       </div>
     </div>

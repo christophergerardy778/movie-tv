@@ -27,6 +27,16 @@
   justify-content: center;
 }
 
+::ng-deep .mat-ink-bar {
+  background-color: #FF9900 !important;
+}
+
+::ng-deep .mat-tab-label-active {
+  color: #FF9900 !important;
+  opacity: 1;
+}
+
+
 @media screen and (max-width: 768px) {
   .app-section-popular {
     margin-top: 36px !important;
