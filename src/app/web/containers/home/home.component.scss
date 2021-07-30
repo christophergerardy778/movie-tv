@@ -18,5 +18,10 @@
 }
 
 .app-max-width {
-  max-width: 100%;
+  max-width: 100% !important;
+}
+
+.app-tab-wrapper {
+  display: flex;
+  align-items: center;
 }

@@ -8,6 +8,7 @@ import {MaterialModule} from "../material/material.module";
 import {CardFullScreenComponent} from './components/card-full-screen/card-full-screen.component';
 import {CardMovieComponent} from './components/card-movie/card-movie.component';
 import {SwiperModule} from "swiper/angular";
+import { FooterMovieComponent } from './components/shared/footer-movie/footer-movie.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import {SwiperModule} from "swiper/angular";
     AppLayoutComponent,
     CardFullScreenComponent,
     CardMovieComponent,
+    FooterMovieComponent,
   ],
   imports: [
     CommonModule,

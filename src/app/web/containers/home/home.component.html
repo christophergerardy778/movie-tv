@@ -9,35 +9,133 @@
         <swiper
           class="app-max-width"
           [slidesPerView]="1"
-          [spaceBetween]="24"
+          [spaceBetween]="18"
         >
-          <ng-template swiperSlide>
-            <app-card-full-screen></app-card-full-screen>
-          </ng-template>
-          <ng-template swiperSlide>
-            <app-card-full-screen></app-card-full-screen>
-          </ng-template>
-          <ng-template swiperSlide>
-            <app-card-full-screen></app-card-full-screen>
+          <ng-template
+            swiperSlide
+            *ngFor="let i of [1 , 2, 3]"
+          >
+            <app-card-full-screen>
+            </app-card-full-screen>
           </ng-template>
         </swiper>
       </div>
 
-      <div class="col-md-3 col-sm-12 col-xs-12">
+      <div class="col-md-3 col-sm-12 col-xs-12 app-mt-2">
         <h2 class="app-text-white-focus-secondary app-font-black">
           Top playing
         </h2>
 
         <div class="app-section-top">
-          <app-card-movie></app-card-movie>
-          <app-card-movie></app-card-movie>
-          <app-card-movie></app-card-movie>
-          <button mat-flat-button class="app-accent-background app-btn-block">
+          <app-card-movie
+            *ngFor="let i of [1 , 2, 3]"
+          >
+          </app-card-movie>
+
+          <button
+            mat-flat-button
+            class="app-accent-background app-btn-block"
+          >
             Show more
           </button>
         </div>
       </div>
     </div>
+  </div>
+</div>
 
+<div class="app-container-ext app-mt-3">
+  <div class="container app-container">
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h2 class="app-text-white-focus">
+          Popular movies
+        </h2>
+
+        <swiper
+          class="app-max-width"
+          [slidesPerView]="4"
+          [spaceBetween]="18"
+        >
+          <ng-template
+            swiperSlide
+            *ngFor="let i of [1 , 2, 3, 4]"
+          >
+            <app-card-movie>
+            </app-card-movie>
+          </ng-template>
+        </swiper>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="app-container-ext app-mt-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h2 class="app-text-white-focus">
+          TV series
+        </h2>
+
+        <swiper
+          [slidesPerView]="4"
+          [spaceBetween]="18"
+        >
+          <ng-template
+            swiperSlide
+            *ngFor="let i of [1 , 2, 3, 4]"
+          >
+            <app-card-movie>
+            </app-card-movie>
+          </ng-template>
+        </swiper>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="app-container-ext app-mt-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h2 class="app-text-white-focus">
+          Categories
+        </h2>
+      </div>
+
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <mat-tab-group>
+          <mat-tab label="Action">
+            <div class="container app-tab-wrapper">
+              <div class="row app-max-width">
+                <div
+                  class="col-md-3 col-sm-12 col-xs-12 app-mt-3"
+                  *ngFor="let i of [1, 2, 3, 4, 5, 6, 7, 8]"
+                >
+                  <app-card-movie></app-card-movie>
+                </div>
+
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <button
+                    mat-button
+                    class="app-accent-background app-btn-block app-text-white-focus app-mt-3"
+                  >
+                    Show all
+                  </button>
+                </div>
+              </div>
+            </div>
+          </mat-tab>
+
+          <mat-tab label="Action"></mat-tab>
+          <mat-tab label="Action"></mat-tab>
+          <mat-tab label="Action"></mat-tab>
+          <mat-tab label="Action"></mat-tab>
+          <mat-tab label="Action"></mat-tab>
+          <mat-tab label="Action"></mat-tab>
+        </mat-tab-group>
+      </div>
+    </div>
   </div>
 </div>
