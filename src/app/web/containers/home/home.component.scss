@@ -24,4 +24,11 @@
 .app-tab-wrapper {
   display: flex;
   align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+  .app-section-popular {
+    margin-top: 36px !important;
+  }
 }

@@ -1,3 +1,10 @@
 .app-footer-wrapper {
   padding: 24px;
 }
+
+.app-footer-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

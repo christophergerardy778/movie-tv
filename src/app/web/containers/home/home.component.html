@@ -10,13 +10,13 @@
           class="app-max-width"
           [slidesPerView]="1"
           [spaceBetween]="18"
+          [autoplay]="swiperPlay"
         >
           <ng-template
             swiperSlide
-            *ngFor="let i of [1 , 2, 3]"
+            *ngFor="let movie of nowPlaying$ | async"
           >
-            <app-card-full-screen>
-            </app-card-full-screen>
+            <app-card-full-screen [movie]="movie"></app-card-full-screen>
           </ng-template>
         </swiper>
       </div>
@@ -28,9 +28,9 @@
 
         <div class="app-section-top">
           <app-card-movie
-            *ngFor="let i of [1 , 2, 3]"
-          >
-          </app-card-movie>
+            *ngFor="let movie of topRated$ | async"
+            [movie]="movie"
+          ></app-card-movie>
 
           <button
             mat-flat-button
@@ -54,15 +54,16 @@
 
         <swiper
           class="app-max-width"
-          [slidesPerView]="4"
           [spaceBetween]="18"
+          [breakpoints]="breakpoints"
         >
           <ng-template
             swiperSlide
-            *ngFor="let i of [1 , 2, 3, 4]"
+            *ngFor="let movie of popular$ | async"
           >
-            <app-card-movie>
-            </app-card-movie>
+            <app-card-movie
+              [movie]="movie"
+            ></app-card-movie>
           </ng-template>
         </swiper>
       </div>
@@ -71,7 +72,7 @@
 </div>
 
 <div class="app-container-ext app-mt-3">
-  <div class="container">
+  <div class="container app-container">
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12">
         <h2 class="app-text-white-focus">
@@ -79,15 +80,17 @@
         </h2>
 
         <swiper
-          [slidesPerView]="4"
+          class="app-max-width"
           [spaceBetween]="18"
+          [breakpoints]="breakpoints"
         >
           <ng-template
             swiperSlide
-            *ngFor="let i of [1 , 2, 3, 4]"
+            *ngFor="let tvMovie of tvPopular$ | async"
           >
-            <app-card-movie>
-            </app-card-movie>
+            <app-card-movie
+              [movie]="tvMovie"
+            ></app-card-movie>
           </ng-template>
         </swiper>
       </div>
@@ -96,7 +99,7 @@
 </div>
 
 <div class="app-container-ext app-mt-3">
-  <div class="container">
+  <div class="container app-container">
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12">
         <h2 class="app-text-white-focus">
@@ -107,13 +110,13 @@
       <div class="col-md-12 col-sm-12 col-xs-12">
         <mat-tab-group>
           <mat-tab label="Action">
-            <div class="container app-tab-wrapper">
+            <div class="app-tab-wrapper">
               <div class="row app-max-width">
                 <div
-                  class="col-md-3 col-sm-12 col-xs-12 app-mt-3"
-                  *ngFor="let i of [1, 2, 3, 4, 5, 6, 7, 8]"
+                  class="col-md-3 col-sm-6 col-xs-12 app-mt-3"
+                  *ngFor="let movie of popular$ | async"
                 >
-                  <app-card-movie></app-card-movie>
+                  <app-card-movie [movie]="movie"></app-card-movie>
                 </div>
 
                 <div class="col-md-12 col-sm-12 col-xs-12">
@@ -128,6 +131,27 @@
             </div>
           </mat-tab>
 
+          <mat-tab label="Action">
+            <div class="app-tab-wrapper">
+              <div class="row app-max-width">
+                <div
+                  class="col-md-3 col-sm-6 col-xs-12 app-mt-3"
+                  *ngFor="let movie of tvPopular$ | async"
+                >
+                  <app-card-movie [movie]="movie"></app-card-movie>
+                </div>
+
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <button
+                    mat-button
+                    class="app-accent-background app-btn-block app-text-white-focus app-mt-3"
+                  >
+                    Show all
+                  </button>
+                </div>
+              </div>
+            </div>
+          </mat-tab>
           <mat-tab label="Action"></mat-tab>
           <mat-tab label="Action"></mat-tab>
           <mat-tab label="Action"></mat-tab>

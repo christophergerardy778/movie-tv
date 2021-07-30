@@ -1,11 +1,17 @@
 <div
-  style="background: url('https://image.tmdb.org/t/p/original/keIxh0wPr2Ymj0Btjh4gW7JJ89e.jpg')"
+  [style.background]="getStyleBackground()"
   class="app-card-movie-wrapper"
 >
   <div class="app-card-movie-container">
-    <h3 class="app-text-white-focus app-mb-none app-text-size-1">
-      Black widow
+    <h3 class="app-text-white-focus app-mb-none app-text-size-1" *ngIf="movie.title !== undefined; else tv">
+      {{ movie.title | titleSlice }}
     </h3>
+
+    <ng-template #tv>
+      <h3 class="app-text-white-focus app-mb-none app-text-size-1">
+        {{ movie.original_name | titleSlice }}
+      </h3>
+    </ng-template>
 
     <div class="app-rate-wrapper app-mb-small">
       <mat-icon class="app-accent-text">
@@ -13,12 +19,21 @@
       </mat-icon>
 
       <span class="app-font-bold app-text-white-focus-secondary app-text-size-1">
-        4.8
+        {{ movie.vote_average | average }}
       </span>
     </div>
 
-    <p class="app-text-white-focus-secondary app-mb-none app-text-size-small">
-      Natasha Romanoff, also known as Black Widow, confronts the...
+    <p
+      class="app-text-white-focus-secondary app-mb-none app-text-size-small"
+      *ngIf="movie.overview.length > 0; else description"
+    >
+      {{ movie.overview | textSlice }}
     </p>
+
+    <ng-template #description>
+      <p class="app-text-white-focus-secondary app-mb-none app-text-size-small">
+        No description provided by server author, please provide a description in the future
+      </p>
+    </ng-template>
   </div>
 </div>
