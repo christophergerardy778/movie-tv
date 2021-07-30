@@ -13,6 +13,7 @@ import {CoreModule} from "../core/core.module";
 import { TextSliceBigPipe } from '../core/pipes/text-slice-big.pipe';
 import { TextSlicePipe } from '../core/pipes/text-slice.pipe';
 import { TitleSlicePipe } from '../core/pipes/title-slice.pipe';
+import { MovieDetailsComponent } from './containers/movie-detaills/movie-details.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { TitleSlicePipe } from '../core/pipes/title-slice.pipe';
     TextSliceBigPipe,
     TextSlicePipe,
     TitleSlicePipe,
+    MovieDetailsComponent,
   ],
   imports: [
     CommonModule,

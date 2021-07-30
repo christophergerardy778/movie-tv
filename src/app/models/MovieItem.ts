@@ -1,4 +1,5 @@
 export interface MovieItem {
+  id: string;
   poster_path?: string;
   overview: string;
   release_date: string;

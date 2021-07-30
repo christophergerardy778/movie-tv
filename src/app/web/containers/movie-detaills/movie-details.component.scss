@@ -1,0 +1,15 @@
+.app-background-image {
+  background-position: center !important;;
+  background-size: cover !important;
+}
+
+.app-height {
+  min-height: 90vh;
+}
+
+.app-card-fullscreen-mask {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: linear-gradient(360deg, #16213E 2.9%, rgba(196, 196, 196, 0) 100%);
+}

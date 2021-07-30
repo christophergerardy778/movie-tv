@@ -1,6 +1,7 @@
 <div
   [style.background]="getStyleBackground()"
   class="app-card-movie-wrapper"
+  (click)="showDetails()"
 >
   <div class="app-card-movie-container">
     <h3 class="app-text-white-focus app-mb-none app-text-size-1" *ngIf="movie.title !== undefined; else tv">

@@ -1,0 +1,33 @@
+<div
+  class="app-background-image app-height"
+  *ngIf="movie$ | async as movie"
+  [style.background]="getStyleBackground(movie)"
+>
+  <div class="app-container app-card-fullscreen-mask app-height" style="display: flex; align-items: center; justify-content: center">
+    <div class="container app-container-ext">
+      <div class="row">
+        <div class="col-md-4">
+          <img
+            [src]="getImagePoster(movie)"
+            style="max-width: 100%; border-radius: 24px"
+          >
+        </div>
+
+        <div class="col-md-8" style="display: flex; flex-direction: column; justify-content: center">
+          <h1 style="font-size: 48px; font-weight: bolder" class="app-text-white-focus">
+            {{ movie.title }}
+          </h1>
+          <p class="app-text-white-focus-secondary">
+            {{ movie.overview }}
+          </p>
+
+          <mat-chip-list>
+            <mat-chip *ngFor="let genre of movie.genres">
+              {{ genre.name }}
+            </mat-chip>
+          </mat-chip-list>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
