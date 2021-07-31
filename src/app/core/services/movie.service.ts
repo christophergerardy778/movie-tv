@@ -8,6 +8,7 @@ import {GenreResponse} from "../../models/Genre";
 import {MovieDetail} from "../../models/MovieDetail";
 import {Video} from "../../models/Video";
 import {from} from "rxjs";
+import {CastResponse} from "../../models/Cast";
 
 @Injectable()
 export class MovieService {
@@ -102,5 +103,14 @@ export class MovieService {
           })
         )
     }));
+  }
+
+  getCasts(movie_id: number) {
+    return this.http.get<CastResponse>(`${environment.base_url}/movie/${movie_id}/credits`, {
+      params: {
+        language: 'en-US',
+        api_key: environment.api_key
+      }
+    }).pipe(map(data => data.cast));
   }
 }

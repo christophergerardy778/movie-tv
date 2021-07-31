@@ -4,6 +4,7 @@ import {MovieService} from "../../../core/services/movie.service";
 import {Observable} from "rxjs";
 import {MovieDetail} from "../../../models/MovieDetail";
 import {environment} from "../../../../environments/environment";
+import {Cast} from "../../../models/Cast";
 
 @Component({
   selector: 'app-movie-details',
@@ -14,11 +15,30 @@ export class MovieDetailsComponent implements OnInit {
 
   movie$!: Observable<MovieDetail>;
   movieUrl$!: Observable<string>;
+  cast$!: Observable<Cast[]>;
+
+  breakpoints = {
+    640: {
+      slidesPerView: 4,
+      spaceBetween: 18,
+    },
+
+    768: {
+      slidesPerView: 6,
+      spaceBetween: 18,
+    },
+
+    1024: {
+      slidesPerView: 8,
+      spaceBetween: 20,
+    },
+  };
 
   constructor(private readonly route: ActivatedRoute, private readonly movieService: MovieService) {
     const movie_id = Number.parseInt(this.route.snapshot.paramMap.get("id")!);
     this.movie$ = this.movieService.getMovieById(movie_id);
     this.movieUrl$ = this.movieService.getMovieTrailer(movie_id);
+    this.cast$ = this.movieService.getCasts(movie_id);
   }
 
   ngOnInit(): void {
@@ -29,7 +49,11 @@ export class MovieDetailsComponent implements OnInit {
   }
 
   getImagePoster(movie: MovieDetail) {
-    return `${environment.images_url}/${movie.poster_path}`;
+    return `${environment.images_url}${movie.poster_path}`;
+  }
+
+  getImageCast(cast: Cast) {
+    return `${environment.images_url}${cast.profile_path}`;
   }
 
 }

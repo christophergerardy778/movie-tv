@@ -4,7 +4,7 @@
 }
 
 .app-height {
-  min-height: 90vh;
+  min-height: 100vh;
 }
 
 .app-card-fullscreen-mask {
@@ -12,4 +12,58 @@
   flex-direction: column;
   justify-content: flex-end;
   background: linear-gradient(360deg, #16213E 2.9%, rgba(196, 196, 196, 0) 100%);
+}
+
+.app-movie-title {
+  font-size: 48px;
+  font-weight: bolder;
+  line-height: normal;
+}
+
+.app-movie-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.app-movie-image {
+  max-width: 100%;
+  border-radius: 24px;
+}
+
+.app-chip-themed {
+  background: transparent;
+  color: #FF9900;
+  border: solid 1px;
+}
+
+.app-image-cast {
+  max-width: 100% !important;
+  border-radius: 8px !important;
+}
+
+.app-cast-center-content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.app-video-wrapper {
+  max-width: 100%;
+  border: none;
+  border-radius: 8px;
+  min-height: 90vh;
+}
+
+@media screen and (max-width: 728px) {
+  .app-video-wrapper {
+    min-height: 500px;
+  }
+}
+
+@media screen and (max-width: 426px){
+  .app-video-wrapper {
+    min-height: 200px;
+  }
 }
