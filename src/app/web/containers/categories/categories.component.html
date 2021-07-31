@@ -1,0 +1,17 @@
+<div class="app-container-ext app-mt-2">
+  <div class="container app-container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="app-font-bold app-text-white-focus app-mb-none">
+          Movies
+        </h1>
+      </div>
+
+      <div class="row" infinite-scroll (scrolled)="getMovies()">
+        <div class="col-md-3 col-sm-6 col-xs-12 app-mt-2" *ngFor="let movie of moviesByCategory">
+          <app-card-movie [movie]="movie"></app-card-movie>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

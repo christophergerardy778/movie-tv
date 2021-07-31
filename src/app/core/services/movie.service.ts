@@ -133,4 +133,15 @@ export class MovieService {
       }
     });
   }
+
+  getMoviesByGenrePaginated(genre_id: string, page: number) {
+    return this.http.get<ApiResponse<MovieItem[]>>(`${environment.base_url}/discover/movie`, {
+      params: {
+        page,
+        with_genres: genre_id,
+        language: 'en-US',
+        api_key: environment.api_key
+      }
+    });
+  }
 }

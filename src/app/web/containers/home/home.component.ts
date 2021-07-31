@@ -4,6 +4,7 @@ import {from, Observable, Observer} from "rxjs";
 import {MovieItem} from "../../../models/MovieItem";
 import {Genre} from "../../../models/Genre";
 import {map} from "rxjs/operators";
+import {Router} from "@angular/router";
 
 interface TabContent {
   tabs: TabItem[];
@@ -52,7 +53,7 @@ export class HomeComponent {
     },
   };
 
-  constructor(private readonly movieService: MovieService) {
+  constructor(private readonly movieService: MovieService, private readonly router: Router) {
     this.topRated$ = this.movieService.getTopPlayed();
     this.nowPlaying$ = this.movieService.getNowPlaying();
     this.popular$ = this.movieService.getPopulars();
@@ -70,6 +71,10 @@ export class HomeComponent {
             });
         }
       });
+  }
+
+  showMoviesByCategory(category_id: string) {
+    return this.router.navigate(["/category/", category_id])
   }
 
 }

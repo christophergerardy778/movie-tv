@@ -16,6 +16,7 @@ import {TitleSlicePipe} from '../core/pipes/title-slice.pipe';
 import {MovieDetailsComponent} from './containers/movie-detaills/movie-details.component';
 import {TopMoviesComponent} from './containers/top-movies/top-movies.component';
 import {InfiniteScrollModule} from "ngx-infinite-scroll";
+import { CategoriesComponent } from './containers/categories/categories.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import {InfiniteScrollModule} from "ngx-infinite-scroll";
     TitleSlicePipe,
     MovieDetailsComponent,
     TopMoviesComponent,
+    CategoriesComponent,
   ],
   imports: [
     CommonModule,
