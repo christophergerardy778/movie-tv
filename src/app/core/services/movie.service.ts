@@ -113,4 +113,14 @@ export class MovieService {
       }
     }).pipe(map(data => data.cast));
   }
+
+  getRecommendations(movie_id: number) {
+    return this.http.get<ApiResponse<MovieItem[]>>(`${environment.base_url}/movie/${movie_id}/recommendations`, {
+      params: {
+        page: 1,
+        language: 'en-US',
+        api_key: environment.api_key
+      }
+    }).pipe(map(response => response.results));
+  }
 }

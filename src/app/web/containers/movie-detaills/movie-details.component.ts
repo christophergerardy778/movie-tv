@@ -5,6 +5,7 @@ import {Observable} from "rxjs";
 import {MovieDetail} from "../../../models/MovieDetail";
 import {environment} from "../../../../environments/environment";
 import {Cast} from "../../../models/Cast";
+import {MovieItem} from "../../../models/MovieItem";
 
 @Component({
   selector: 'app-movie-details',
@@ -16,6 +17,7 @@ export class MovieDetailsComponent implements OnInit {
   movie$!: Observable<MovieDetail>;
   movieUrl$!: Observable<string>;
   cast$!: Observable<Cast[]>;
+  recommendations$!: Observable<MovieItem[]>;
 
   breakpoints = {
     640: {
@@ -35,10 +37,13 @@ export class MovieDetailsComponent implements OnInit {
   };
 
   constructor(private readonly route: ActivatedRoute, private readonly movieService: MovieService) {
-    const movie_id = Number.parseInt(this.route.snapshot.paramMap.get("id")!);
-    this.movie$ = this.movieService.getMovieById(movie_id);
-    this.movieUrl$ = this.movieService.getMovieTrailer(movie_id);
-    this.cast$ = this.movieService.getCasts(movie_id);
+    this.route.params.subscribe(params => {
+      const movie_id = Number.parseInt(params["id"]);
+      this.movie$ = this.movieService.getMovieById(movie_id);
+      this.movieUrl$ = this.movieService.getMovieTrailer(movie_id);
+      this.cast$ = this.movieService.getCasts(movie_id);
+      this.recommendations$ = this.movieService.getRecommendations(movie_id);
+    });
   }
 
   ngOnInit(): void {

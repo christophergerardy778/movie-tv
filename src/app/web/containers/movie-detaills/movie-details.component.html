@@ -6,7 +6,7 @@
   <div class="app-container-ext app-card-fullscreen-mask app-height app-movie-content">
     <div class="container app-container">
       <div class="row">
-        <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="col-md-4 col-sm-6 app-image-content">
           <img
             [src]="getImagePoster(movie)"
             class="app-movie-image"
@@ -74,12 +74,6 @@
           </ng-template>
         </swiper>
 
-        <button
-          mat-button
-          class="app-accent-background app-text-white-focus app-btn-block"
-        >
-          Show all cast
-        </button>
       </div>
     </div>
   </div>
@@ -92,5 +86,20 @@
       width="100%"
       [src]="url | safeUrl"
     ></iframe>
+  </div>
+</div>
+
+<div class="app-mt-4 app-container-ext">
+  <div class="container app-container">
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h2 class="app-text-white-focus app-mb-none">
+          Recommendation
+        </h2>
+      </div>
+      <div class="col-md-3 col-sm-12 col-xs-12 app-mt-2" *ngFor="let movie of recommendations$ | async">
+        <app-card-movie [movie]="movie"></app-card-movie>
+      </div>
+    </div>
   </div>
 </div>

@@ -1,5 +1,5 @@
 .app-background-image {
-  background-position: center !important;;
+  background-position: center !important;
   background-size: cover !important;
 }
 
@@ -59,6 +59,10 @@
 @media screen and (max-width: 728px) {
   .app-video-wrapper {
     min-height: 500px;
+  }
+
+  .app-image-content {
+    display: none;
   }
 }
 

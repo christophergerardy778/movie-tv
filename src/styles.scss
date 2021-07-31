@@ -116,6 +116,10 @@ body {
   width: 100%;
 }
 
+.app-cursor-pointer {
+  cursor: pointer;
+}
+
 @media screen and (max-width: 768px){
   .app-container {
     max-width: 100%;
