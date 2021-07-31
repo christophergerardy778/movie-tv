@@ -10,10 +10,12 @@ import {CardMovieComponent} from './components/card-movie/card-movie.component';
 import {SwiperModule} from "swiper/angular";
 import {FooterMovieComponent} from './components/shared/footer-movie/footer-movie.component';
 import {CoreModule} from "../core/core.module";
-import { TextSliceBigPipe } from '../core/pipes/text-slice-big.pipe';
-import { TextSlicePipe } from '../core/pipes/text-slice.pipe';
-import { TitleSlicePipe } from '../core/pipes/title-slice.pipe';
-import { MovieDetailsComponent } from './containers/movie-detaills/movie-details.component';
+import {TextSliceBigPipe} from '../core/pipes/text-slice-big.pipe';
+import {TextSlicePipe} from '../core/pipes/text-slice.pipe';
+import {TitleSlicePipe} from '../core/pipes/title-slice.pipe';
+import {MovieDetailsComponent} from './containers/movie-detaills/movie-details.component';
+import {TopMoviesComponent} from './containers/top-movies/top-movies.component';
+import {InfiniteScrollModule} from "ngx-infinite-scroll";
 
 @NgModule({
   declarations: [
@@ -27,13 +29,15 @@ import { MovieDetailsComponent } from './containers/movie-detaills/movie-details
     TextSlicePipe,
     TitleSlicePipe,
     MovieDetailsComponent,
+    TopMoviesComponent,
   ],
   imports: [
     CommonModule,
     MaterialModule,
     WebRoutingModule,
     SwiperModule,
-    CoreModule
+    CoreModule,
+    InfiniteScrollModule
   ]
 })
 export class WebModule {

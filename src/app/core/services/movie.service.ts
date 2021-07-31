@@ -123,4 +123,14 @@ export class MovieService {
       }
     }).pipe(map(response => response.results));
   }
+
+  getTopMoviesPaginated(page: number) {
+    return this.http.get<ApiResponse<MovieItem[]>>(`${environment.base_url}/movie/top_rated`, {
+      params: {
+        page: page,
+        language: 'en-US',
+        api_key: environment.api_key
+      }
+    });
+  }
 }

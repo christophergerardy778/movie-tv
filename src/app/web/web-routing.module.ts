@@ -3,6 +3,7 @@ import {RouterModule, Routes} from "@angular/router";
 import {HomeComponent} from "./containers/home/home.component";
 import {AppLayoutComponent} from "./layout/app-layout/app-layout.component";
 import {MovieDetailsComponent} from "./containers/movie-detaills/movie-details.component";
+import {TopMoviesComponent} from "./containers/top-movies/top-movies.component";
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
       {
         path: 'movie/:id',
         component: MovieDetailsComponent
+      },
+      {
+        path: 'movies/top-list',
+        component: TopMoviesComponent
       }
     ]
   }
